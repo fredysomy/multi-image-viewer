@@ -131,51 +131,6 @@ class MultiImageViewer extends StatelessWidget {
           width: width ?? defaultWidth,
           child: Row(children: [
             Expanded(
-              child: Column(
-                children: [
-                  Expanded(
-                    child: Padding(
-                      padding: const EdgeInsets.only(right: 2, bottom: 2),
-                      child: GestureDetector(
-                        onTap: () => openImage(context, 0, imagesList,
-                            captionList, networkImageHeaders),
-                        child: Container(
-                          decoration: BoxDecoration(
-                              color: backgroundColor,
-                              image: DecorationImage(
-                                  image: _createNetworkImage(
-                                      images.first.imageUrl),
-                                  fit: BoxFit.cover),
-                              borderRadius: const BorderRadius.only(
-                                  topLeft: Radius.circular(5))),
-                        ),
-                      ),
-                    ),
-                  ),
-                  Expanded(
-                    child: Padding(
-                      padding: const EdgeInsets.only(right: 2),
-                      child: GestureDetector(
-                        onTap: () => openImage(context, 1, imagesList,
-                            captionList, networkImageHeaders),
-                        child: Container(
-                          width: width == null ? defaultWidth / 2 : width! / 2,
-                          decoration: BoxDecoration(
-                              color: backgroundColor,
-                              image: DecorationImage(
-                                  image:
-                                      _createNetworkImage(images[1].imageUrl),
-                                  fit: BoxFit.cover),
-                              borderRadius: const BorderRadius.only(
-                                  bottomLeft: Radius.circular(5))),
-                        ),
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            Expanded(
               child: Padding(
                 padding: const EdgeInsets.only(left: 0),
                 child: GestureDetector(
@@ -195,14 +150,6 @@ class MultiImageViewer extends StatelessWidget {
                 ),
               ),
             ),
-          ]),
-        );
-
-      case 4:
-        return SizedBox(
-          height: height,
-          width: width ?? defaultWidth,
-          child: Row(children: [
             Expanded(
               child: Column(
                 children: [
@@ -213,7 +160,6 @@ class MultiImageViewer extends StatelessWidget {
                         onTap: () => openImage(context, 0, imagesList,
                             captionList, networkImageHeaders),
                         child: Container(
-                          // width: width == null ? defaultWidth / 2 : width! / 2,
                           decoration: BoxDecoration(
                               color: backgroundColor,
                               image: DecorationImage(
@@ -242,52 +188,6 @@ class MultiImageViewer extends StatelessWidget {
                                   fit: BoxFit.cover),
                               borderRadius: const BorderRadius.only(
                                   bottomLeft: Radius.circular(5))),
-                        ),
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            Expanded(
-              child: Column(
-                children: [
-                  Expanded(
-                    child: Padding(
-                      padding: const EdgeInsets.only(left: 0, bottom: 2),
-                      child: GestureDetector(
-                        onTap: () => openImage(context, 2, imagesList,
-                            captionList, networkImageHeaders),
-                        child: Container(
-                          width: width == null ? defaultWidth / 2 : width! / 2,
-                          decoration: BoxDecoration(
-                              color: backgroundColor,
-                              image: DecorationImage(
-                                  image:
-                                      _createNetworkImage(images[2].imageUrl),
-                                  fit: BoxFit.cover),
-                              borderRadius: const BorderRadius.only(
-                                  topRight: Radius.circular(5))),
-                        ),
-                      ),
-                    ),
-                  ),
-                  Expanded(
-                    child: Padding(
-                      padding: const EdgeInsets.only(left: 0, top: 0),
-                      child: GestureDetector(
-                        onTap: () => openImage(context, 3, imagesList,
-                            captionList, networkImageHeaders),
-                        child: Container(
-                          width: width == null ? defaultWidth / 2 : width! / 2,
-                          decoration: BoxDecoration(
-                              color: backgroundColor,
-                              image: DecorationImage(
-                                  image:
-                                      _createNetworkImage(images[3].imageUrl),
-                                  fit: BoxFit.cover),
-                              borderRadius: const BorderRadius.only(
-                                  bottomRight: Radius.circular(5))),
                         ),
                       ),
                     ),
@@ -325,27 +225,6 @@ class MultiImageViewer extends StatelessWidget {
                       ),
                     ),
                   ),
-                  Expanded(
-                    child: Padding(
-                      padding: const EdgeInsets.only(right: 2),
-                      child: GestureDetector(
-                        onTap: () => openImage(context, 1, imagesList,
-                            captionList, networkImageHeaders),
-                        child: Container(
-                          width: width == null ? defaultWidth / 2 : width! / 2,
-                          decoration: BoxDecoration(
-                            color: backgroundColor,
-                            image: DecorationImage(
-                                image: _createNetworkImage(images[1].imageUrl),
-                                fit: BoxFit.cover),
-                            borderRadius: const BorderRadius.only(
-                              bottomLeft: Radius.circular(5),
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
                 ],
               ),
             ),
@@ -356,7 +235,7 @@ class MultiImageViewer extends StatelessWidget {
                     child: Padding(
                       padding: const EdgeInsets.only(left: 0, bottom: 2),
                       child: GestureDetector(
-                        onTap: () => openImage(context, 2, imagesList,
+                        onTap: () => openImage(context, 1, imagesList,
                             captionList, networkImageHeaders),
                         child: Container(
                           width: width == null ? defaultWidth / 2 : width! / 2,
@@ -377,7 +256,7 @@ class MultiImageViewer extends StatelessWidget {
                     child: Padding(
                       padding: const EdgeInsets.only(left: 0, top: 0),
                       child: GestureDetector(
-                        onTap: () => openImage(context, 3, imagesList,
+                        onTap: () => openImage(context, 2, imagesList,
                             captionList, networkImageHeaders),
                         child: Container(
                           width: width == null ? defaultWidth / 2 : width! / 2,
@@ -398,7 +277,7 @@ class MultiImageViewer extends StatelessWidget {
                               ),
                             ),
                             child: Center(
-                                child: Text("+${images.length - 4}",
+                                child: Text("+${images.length - 3}",
                                     style: textStyle)),
                           ),
                         ),
